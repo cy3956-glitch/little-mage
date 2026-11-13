@@ -1,7 +1,6 @@
-
 {
-  "version": "1.19",
-  "base_version": "1.18",
-  "url": "https://github.com/cy3956-glitch/little-mage/releases/download/v1.19/Mage_Patch_v1.18_to_v1.19.zip",
-  "sha256": "a6679ae338f676a5ca34a8e1e29c755f084109063bdf6e73bc32d30121e72b99"
+    "version":  "1.20",
+    "base_version":  "1.19",
+    "url":  "https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/Mage_Patch_v1.19_to_v1.20.zip",
+    "sha256":  "157f92e5827b3bfb5fbf4f036181fde2c2222fba3fcc935c31ed66c54c61aeee"
 }
