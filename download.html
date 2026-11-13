@@ -51,6 +51,7 @@
       margin: 26px 0;
     }
 
+    /* 게임 다운로드 버튼 */
     .download-content a.game-download-button {
       display: flex;
       flex-direction: column;
@@ -117,6 +118,7 @@
       letter-spacing: 0.2px;
     }
 
+    /* 자동 업데이트 런처 버튼 */
     .download-content a.launcher-button {
       background: linear-gradient(
         135deg,
@@ -147,24 +149,52 @@
       color: #c9edff;
     }
 
-    .download-guide {
+    /* 설치 방법 및 업데이트 안내 박스 */
+    .download-content .download-guide {
       margin-top: 12px;
-      padding: 17px 20px;
-      border: 1px solid rgba(221, 189, 119, 0.35);
+      padding: 20px 22px;
+
+      background: linear-gradient(
+        135deg,
+        #203447 0%,
+        #142331 100%
+      );
+
+      border: 1px solid #c69d57;
       border-radius: 14px;
-      background: rgba(22, 34, 49, 0.65);
+
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
+
+      color: #f3f6fc;
     }
 
-    .download-guide strong {
-      color: #f3ce80;
+    /* 안내 박스 제목 */
+    .download-content .download-guide strong {
+      color: #ffd47e;
+      font-family: "Jua", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
     }
 
-    .download-guide p {
-      margin: 8px 0;
+    /* 안내 박스 본문 */
+    .download-content .download-guide p {
+      color: #e9f1fc;
+      font-size: 15px;
+      line-height: 1.9;
+      margin: 9px 0;
     }
 
-    .download-guide code {
+    /* 파일 이름 강조 */
+    .download-content .download-guide code {
+      color: #ffe4a3;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 3px 6px;
+      border-radius: 5px;
       overflow-wrap: anywhere;
+    }
+
+    .download-content .download-guide a {
+      color: #9cdbff;
     }
 
     @media (max-width: 680px) {
@@ -180,6 +210,14 @@
 
       .game-download-button small {
         font-size: 13px;
+      }
+
+      .download-content .download-guide {
+        padding: 16px;
+      }
+
+      .download-content .download-guide p {
+        font-size: 14px;
       }
     }
 
@@ -263,7 +301,6 @@
         </p>
 
         <div class="download-actions">
-
           <a
             class="game-download-button"
             href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_v1.20_Windows.zip"
@@ -271,11 +308,11 @@
             ⬇ 게임 전체 다운로드
             <small>Windows PC · v1.20 · 약 564MB</small>
           </a>
-
         </div>
 
         <div class="download-guide">
           <strong>처음 설치 방법</strong>
+
           <p>① 전체 게임 ZIP을 다운로드합니다.</p>
           <p>② 원하는 폴더에 압축을 해제합니다.</p>
           <p>③ <code>꼬마법사.exe</code>를 실행합니다.</p>
@@ -294,7 +331,6 @@
         </p>
 
         <div class="download-actions">
-
           <a
             class="game-download-button launcher-button"
             href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_Launcher_Installer_v1_3_0.zip"
@@ -302,11 +338,11 @@
             ↻ 자동 업데이트 런처 다운로드
             <small>v1.3.0 · 기존 사용자 · 최초 1회 설치</small>
           </a>
-
         </div>
 
         <div class="download-guide">
           <strong>런처 설치 방법</strong>
+
           <p>① 런처 설치기 ZIP을 다운로드합니다.</p>
           <p>② 압축을 해제합니다.</p>
           <p>
@@ -323,15 +359,18 @@
 
         <div class="download-guide">
           <strong>자동 업데이트 안내</strong>
+
           <p>
             런처는 GitHub에서 최신 버전을 확인하고
             지원되는 차등 패치를 다운로드합니다.
           </p>
+
           <p>
             업데이트 중에는 게임을 종료해 주세요.
             업데이트 파일 검증에 실패하면 기존 게임을
             보존하도록 설계되어 있습니다.
           </p>
+
           <p>
             현재 차등 업데이트는 지원되는 버전 간
             게임 데이터(PCK) 업데이트를 기준으로 합니다.
