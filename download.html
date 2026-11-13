@@ -1,44 +1,369 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>다운로드 | 꼬마법사 : 5원소의 길</title><meta name="description" content="꼬마법사 : 5원소의 길. PCYStudio의 다섯 원소 성장 모험."><link rel="icon" href="assets/icon.png"><link rel="stylesheet" href="assets/style.css"><script src="assets/config.js" defer></script><script src="assets/site.js" defer></script><link rel="stylesheet" href="assets/updater.css"></head><body><header><a class="brand" href="index.html"><img src="assets/title.png" alt="꼬마법사 : 5원소의 길" width="160" height="80" style="object-fit:contain"></a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false">메뉴 ☰</button><nav id="main-nav" aria-label="주 메뉴"><a href="index.html">홈</a><a href="about.html">게임 소개</a><a href="magic.html">5원소 마법</a><a href="adventure.html">모험 안내</a><a href="equipment.html">장비·성장</a><a href="news.html">공지사항</a><a href="download.html" aria-current="page">다운로드</a><a href="guide.html">가이드북</a></nav></header><main><section class="page-head wrap"><div class="eyebrow">DOWNLOAD</div><h1>다섯 원소의 모험, 지금 시작하세요!</h1><p>꼬마법사 : 5원소의 길</p></section><section class="wrap page-body"><div class="gallery-wide"><div><img class="actual-image" src="assets/icon.png" alt="꼬마법사 게임 앱 아이콘" loading="lazy"></div><div><h2>게임 다운로드</h2>
 
-<div>
-  <h2>게임 다운로드</h2>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <p class="notice">
-    <strong>꼬마법사 : 5원소의 길 v1.20</strong><br>
-    불·물·얼음·전기·대지,
-    다섯 원소의 마법을 경험해 보세요.<br><br>
-    Windows PC용 · 전체 게임 설치 파일<br>
-    압축 해제 후 꼬마법사.exe를 실행하세요.
-  </p>
+  <title>다운로드 | 꼬마법사 : 5원소의 길</title>
+  <meta name="description" content="꼬마법사 : 5원소의 길. PCYStudio의 다섯 원소 성장 모험.">
 
-  <h3>처음 설치하는 사용자</h3>
-  <p>게임 파일이 없다면 전체 게임을 다운로드하세요.</p>
-  <p>
-    <a class="button download-link"
-       href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_v1.20_Windows.zip">
-      게임 전체 다운로드 (v1.20)
-    </a>
-  </p>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/updater.css">
 
-  <h3>기존 사용자 · 자동 업데이트 런처</h3>
-  <p>
-    게임을 이미 설치했다면 런처 v1.3.0을
-    최초 한 번 설치하세요.<br>
-    압축 해제 후 INSTALL_LAUNCHER.bat을 실행하고
-    기존 게임 폴더를 선택하면 됩니다.
-  </p>
-  <p>
-    <a class="button"
-       href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_Launcher_Installer_v1_3_0.zip">
-      자동 업데이트 런처 다운로드 (v1.3.0)
-    </a>
-  </p>
+  <script src="assets/config.js" defer></script>
+  <script src="assets/site.js" defer></script>
 
-  <p class="notice">
-    <strong>업데이트 안내</strong><br>
-    새 런처는 차등 패치를 확인하고 다운로드합니다.<br>
-    게임 데이터와 캐릭터 저장 기록을 유지하면서
-    업데이트하도록 설계되어 있습니다.<br>
-    현재는 지원되는 버전 간 패치만 적용할 수 있습니다.
-  </p>
-</div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+  <style>
+    .download-content {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .download-content h2,
+    .download-content h3 {
+      font-family: "Jua", sans-serif;
+    }
+
+    .download-content h2 {
+      font-size: 32px;
+      margin: 0 0 20px;
+    }
+
+    .download-content h3 {
+      font-size: 23px;
+      margin: 32px 0 12px;
+    }
+
+    .download-content p {
+      line-height: 1.85;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin: 26px 0;
+    }
+
+    .download-content a.game-download-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      width: 100%;
+      max-width: 460px;
+      min-height: 96px;
+      box-sizing: border-box;
+      padding: 18px 22px;
+
+      font-family: "Jua", sans-serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+
+      background: linear-gradient(
+        135deg,
+        #b98230 0%,
+        #92611c 50%,
+        #5d3b14 100%
+      );
+
+      border: 2px solid #f4cc79;
+      border-radius: 18px;
+
+      box-shadow:
+        0 5px 0 #35210d,
+        0 12px 25px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+    }
+
+    .download-content a.game-download-button:hover {
+      color: #ffffff;
+      transform: translateY(-3px);
+      filter: brightness(1.12);
+
+      box-shadow:
+        0 8px 0 #35210d,
+        0 17px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .download-content a.game-download-button:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #35210d;
+    }
+
+    .game-download-button small {
+      display: block;
+      font-family: "Jua", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #ffe7b5;
+      letter-spacing: 0.2px;
+    }
+
+    .download-content a.launcher-button {
+      background: linear-gradient(
+        135deg,
+        #387aa3 0%,
+        #245272 50%,
+        #132d49 100%
+      );
+
+      border-color: #8cd6ff;
+
+      box-shadow:
+        0 5px 0 #0c2136,
+        0 12px 25px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .download-content a.launcher-button:hover {
+      box-shadow:
+        0 8px 0 #0c2136,
+        0 17px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .download-content a.launcher-button:active {
+      box-shadow: 0 2px 0 #0c2136;
+    }
+
+    .launcher-button small {
+      color: #c9edff;
+    }
+
+    .download-guide {
+      margin-top: 12px;
+      padding: 17px 20px;
+      border: 1px solid rgba(221, 189, 119, 0.35);
+      border-radius: 14px;
+      background: rgba(22, 34, 49, 0.65);
+    }
+
+    .download-guide strong {
+      color: #f3ce80;
+    }
+
+    .download-guide p {
+      margin: 8px 0;
+    }
+
+    .download-guide code {
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 680px) {
+      .download-content h2 {
+        font-size: 27px;
+      }
+
+      .download-content a.game-download-button {
+        max-width: 100%;
+        min-height: 84px;
+        padding: 15px;
+      }
+
+      .game-download-button small {
+        font-size: 13px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .download-content a.game-download-button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="index.html">
+    <img
+      src="assets/title.png"
+      alt="꼬마법사 : 5원소의 길"
+      width="160"
+      height="80"
+      style="object-fit:contain"
+    >
+  </a>
+
+  <button
+    class="menu-toggle"
+    aria-controls="main-nav"
+    aria-expanded="false"
+  >
+    메뉴 ☰
+  </button>
+
+  <nav id="main-nav" aria-label="주 메뉴">
+    <a href="index.html">홈</a>
+    <a href="about.html">게임 소개</a>
+    <a href="magic.html">5원소 마법</a>
+    <a href="adventure.html">모험 안내</a>
+    <a href="equipment.html">장비·성장</a>
+    <a href="news.html">공지사항</a>
+    <a href="download.html" aria-current="page">다운로드</a>
+    <a href="guide.html">가이드북</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-head wrap">
+    <div class="eyebrow">DOWNLOAD</div>
+    <h1>다섯 원소의 모험, 지금 시작하세요!</h1>
+    <p>꼬마법사 : 5원소의 길</p>
+  </section>
+
+  <section class="wrap page-body">
+    <div class="gallery-wide">
+
+      <div>
+        <img
+          class="actual-image"
+          src="assets/icon.png"
+          alt="꼬마법사 게임 아이콘"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="download-content">
+
+        <h2>게임 다운로드</h2>
+
+        <p class="notice">
+          <strong>꼬마법사 : 5원소의 길 v1.20</strong><br>
+          불·물·얼음·전기·대지!<br>
+          다섯 원소의 마법으로 펼치는 성장 모험.<br><br>
+          Windows PC용
+        </p>
+
+        <h3>처음 게임을 설치하시나요?</h3>
+
+        <p>
+          게임을 처음 시작한다면 아래 전체 게임 파일을
+          다운로드하세요.
+        </p>
+
+        <div class="download-actions">
+
+          <a
+            class="game-download-button"
+            href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_v1.20_Windows.zip"
+          >
+            ⬇ 게임 전체 다운로드
+            <small>Windows PC · v1.20 · 약 564MB</small>
+          </a>
+
+        </div>
+
+        <div class="download-guide">
+          <strong>처음 설치 방법</strong>
+          <p>① 전체 게임 ZIP을 다운로드합니다.</p>
+          <p>② 원하는 폴더에 압축을 해제합니다.</p>
+          <p>③ <code>꼬마법사.exe</code>를 실행합니다.</p>
+          <p>
+            ④ 자동 업데이트 런처가 구버전이라면
+            아래 설치기를 한 번 더 적용합니다.
+          </p>
+        </div>
+
+        <h3>자동 업데이트 런처</h3>
+
+        <p>
+          이미 게임을 설치했다면 새 런처를 적용해 주세요.
+          이후 지원되는 게임 버전 간에는 변경된 데이터만
+          다운로드해 업데이트할 수 있습니다.
+        </p>
+
+        <div class="download-actions">
+
+          <a
+            class="game-download-button launcher-button"
+            href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_Launcher_Installer_v1_3_0.zip"
+          >
+            ↻ 자동 업데이트 런처 다운로드
+            <small>v1.3.0 · 기존 사용자 · 최초 1회 설치</small>
+          </a>
+
+        </div>
+
+        <div class="download-guide">
+          <strong>런처 설치 방법</strong>
+          <p>① 런처 설치기 ZIP을 다운로드합니다.</p>
+          <p>② 압축을 해제합니다.</p>
+          <p>
+            ③ <code>INSTALL_LAUNCHER.bat</code>를 실행합니다.
+          </p>
+          <p>
+            ④ 기존 게임이 설치된 폴더를 선택합니다.
+          </p>
+          <p>
+            ⑤ 설치가 끝나면
+            <code>꼬마법사.exe</code>를 실행합니다.
+          </p>
+        </div>
+
+        <div class="download-guide">
+          <strong>자동 업데이트 안내</strong>
+          <p>
+            런처는 GitHub에서 최신 버전을 확인하고
+            지원되는 차등 패치를 다운로드합니다.
+          </p>
+          <p>
+            업데이트 중에는 게임을 종료해 주세요.
+            업데이트 파일 검증에 실패하면 기존 게임을
+            보존하도록 설계되어 있습니다.
+          </p>
+          <p>
+            현재 차등 업데이트는 지원되는 버전 간
+            게임 데이터(PCK) 업데이트를 기준으로 합니다.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<p
+  id="status-note"
+  class="status-note"
+  role="status"
+></p>
+
+<footer class="wrap">
+  <a
+    class="studio-link"
+    href="#"
+    aria-disabled="true"
+    title="스튜디오 홈페이지 주소 연결 예정"
+  >
+    <img src="assets/studio.png" alt="PCYStudio 로고">
+    <span class="footer-brand">PCYStudio</span>
+  </a>
+
+  <span>꼬마법사 : 5원소의 길</span>
+  <small>© 2026 PCYStudio</small>
+</footer>
+
+</body>
+</html>
