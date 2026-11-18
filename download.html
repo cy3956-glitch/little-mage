@@ -1,409 +1,137 @@
-
 <!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>다운로드 | 꼬마법사 : 5원소의 길</title>
   <meta name="description" content="꼬마법사 : 5원소의 길. PCYStudio의 다섯 원소 성장 모험.">
-
   <link rel="icon" href="assets/icon.png">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/updater.css">
-
   <script src="assets/config.js" defer></script>
   <script src="assets/site.js" defer></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-
   <style>
-    .download-content {
-      width: 100%;
-      min-width: 0;
-    }
-
-    .download-content h2,
-    .download-content h3 {
-      font-family: "Jua", sans-serif;
-    }
-
-    .download-content h2 {
-      font-size: 32px;
-      margin: 0 0 20px;
-    }
-
-    .download-content h3 {
-      font-size: 23px;
-      margin: 32px 0 12px;
-    }
-
-    .download-content p {
-      line-height: 1.85;
-    }
-
-    .download-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      margin: 26px 0;
-    }
-
-    /* 게임 다운로드 버튼 */
+    .download-content { width:100%; min-width:0 }
+    .download-content h2,.download-content h3 { font-family:"Jua",sans-serif }
+    .download-content h2 { font-size:32px; margin:0 0 20px }
+    .download-content h3 { font-size:23px; margin:32px 0 12px }
+    .download-content p { line-height:1.85 }
+    .download-actions { display:flex; flex-direction:column; gap:22px; margin:26px 0 }
     .download-content a.game-download-button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-
-      width: 100%;
-      max-width: 460px;
-      min-height: 96px;
-      box-sizing: border-box;
-      padding: 18px 22px;
-
-      font-family: "Jua", sans-serif;
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: 400;
-      line-height: 1.25;
-      text-align: center;
-      text-decoration: none;
-      color: #ffffff;
-
-      background: linear-gradient(
-        135deg,
-        #b98230 0%,
-        #92611c 50%,
-        #5d3b14 100%
-      );
-
-      border: 2px solid #f4cc79;
-      border-radius: 18px;
-
-      box-shadow:
-        0 5px 0 #35210d,
-        0 12px 25px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px;
+      width:100%; max-width:460px; min-height:96px; box-sizing:border-box; padding:18px 22px;
+      font-family:"Jua",sans-serif; font-size:clamp(20px,3vw,28px); font-weight:400;
+      line-height:1.25; text-align:center; text-decoration:none; color:#fff;
+      background:linear-gradient(135deg,#b98230 0%,#92611c 50%,#5d3b14 100%);
+      border:2px solid #f4cc79; border-radius:18px;
+      box-shadow:0 5px 0 #35210d,0 12px 25px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.25);
+      transition:transform .2s,box-shadow .2s,filter .2s;
     }
-
     .download-content a.game-download-button:hover {
-      color: #ffffff;
-      transform: translateY(-3px);
-      filter: brightness(1.12);
-
-      box-shadow:
-        0 8px 0 #35210d,
-        0 17px 30px rgba(0, 0, 0, 0.35);
+      color:#fff; transform:translateY(-3px); filter:brightness(1.12);
+      box-shadow:0 8px 0 #35210d,0 17px 30px rgba(0,0,0,.35);
     }
-
-    .download-content a.game-download-button:active {
-      transform: translateY(3px);
-      box-shadow: 0 2px 0 #35210d;
+    .download-content a.game-download-button:active { transform:translateY(3px); box-shadow:0 2px 0 #35210d }
+    .game-download-button small { display:block; font-family:"Jua",sans-serif; font-size:15px; font-weight:400; color:#ffe7b5 }
+    .download-content a.updater-button {
+      background:linear-gradient(135deg,#387aa3 0%,#245272 50%,#132d49 100%);
+      border-color:#8cd6ff; box-shadow:0 5px 0 #0c2136,0 12px 25px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.2);
     }
-
-    .game-download-button small {
-      display: block;
-      font-family: "Jua", sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      color: #ffe7b5;
-      letter-spacing: 0.2px;
-    }
-
-    /* 자동 업데이트 런처 버튼 */
-    .download-content a.launcher-button {
-      background: linear-gradient(
-        135deg,
-        #387aa3 0%,
-        #245272 50%,
-        #132d49 100%
-      );
-
-      border-color: #8cd6ff;
-
-      box-shadow:
-        0 5px 0 #0c2136,
-        0 12px 25px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .download-content a.launcher-button:hover {
-      box-shadow:
-        0 8px 0 #0c2136,
-        0 17px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .download-content a.launcher-button:active {
-      box-shadow: 0 2px 0 #0c2136;
-    }
-
-    .launcher-button small {
-      color: #c9edff;
-    }
-
-    /* 설치 방법 및 업데이트 안내 박스 */
+    .download-content a.updater-button:hover { box-shadow:0 8px 0 #0c2136,0 17px 30px rgba(0,0,0,.35) }
+    .download-content a.updater-button:active { box-shadow:0 2px 0 #0c2136 }
+    .updater-button small { color:#c9edff }
     .download-content .download-guide {
-      margin-top: 12px;
-      padding: 20px 22px;
-
-      background: linear-gradient(
-        135deg,
-        #203447 0%,
-        #142331 100%
-      );
-
-      border: 1px solid #c69d57;
-      border-radius: 14px;
-
-      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
-
-      color: #f3f6fc;
+      margin-top:12px; padding:20px 22px; background:linear-gradient(135deg,#203447 0%,#142331 100%);
+      border:1px solid #c69d57; border-radius:14px; box-shadow:0 5px 16px rgba(0,0,0,.18); color:#f3f6fc;
     }
-
-    /* 안내 박스 제목 */
-    .download-content .download-guide strong {
-      color: #ffd47e;
-      font-family: "Jua", sans-serif;
-      font-size: 18px;
-      font-weight: 400;
+    .download-content .download-guide strong { color:#ffd47e; font-family:"Jua",sans-serif; font-size:18px; font-weight:400 }
+    .download-content .download-guide p { color:#e9f1fc; font-size:15px; line-height:1.9; margin:9px 0 }
+    .download-content .download-guide code { color:#ffe4a3; background:rgba(255,255,255,.1); padding:3px 6px; border-radius:5px; overflow-wrap:anywhere }
+    .download-content .download-guide a { color:#9cdbff }
+    @media(max-width:680px){
+      .download-content h2{font-size:27px}
+      .download-content a.game-download-button{max-width:100%;min-height:84px;padding:15px}
+      .game-download-button small{font-size:13px}
+      .download-content .download-guide{padding:16px}
+      .download-content .download-guide p{font-size:14px}
     }
-
-    /* 안내 박스 본문 */
-    .download-content .download-guide p {
-      color: #e9f1fc;
-      font-size: 15px;
-      line-height: 1.9;
-      margin: 9px 0;
-    }
-
-    /* 파일 이름 강조 */
-    .download-content .download-guide code {
-      color: #ffe4a3;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 3px 6px;
-      border-radius: 5px;
-      overflow-wrap: anywhere;
-    }
-
-    .download-content .download-guide a {
-      color: #9cdbff;
-    }
-
-    @media (max-width: 680px) {
-      .download-content h2 {
-        font-size: 27px;
-      }
-
-      .download-content a.game-download-button {
-        max-width: 100%;
-        min-height: 84px;
-        padding: 15px;
-      }
-
-      .game-download-button small {
-        font-size: 13px;
-      }
-
-      .download-content .download-guide {
-        padding: 16px;
-      }
-
-      .download-content .download-guide p {
-        font-size: 14px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .download-content a.game-download-button {
-        transition: none;
-      }
-    }
+    @media(prefers-reduced-motion:reduce){.download-content a.game-download-button{transition:none}}
   </style>
 </head>
-
 <body>
-
 <header>
-  <a class="brand" href="index.html">
-    <img
-      src="assets/title.png"
-      alt="꼬마법사 : 5원소의 길"
-      width="160"
-      height="80"
-      style="object-fit:contain"
-    >
-  </a>
-
-  <button
-    class="menu-toggle"
-    aria-controls="main-nav"
-    aria-expanded="false"
-  >
-    메뉴 ☰
-  </button>
-
+  <a class="brand" href="index.html"><img src="assets/title.png" alt="꼬마법사 : 5원소의 길" width="160" height="80" style="object-fit:contain"></a>
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false">메뉴 ☰</button>
   <nav id="main-nav" aria-label="주 메뉴">
-    <a href="index.html">홈</a>
-    <a href="about.html">게임 소개</a>
-    <a href="magic.html">5원소 스킬</a>
-    <a href="adventure.html">모험 안내</a>
-    <a href="equipment.html">장비·성장</a>
-    <a href="news.html">공지사항</a>
-    <a href="download.html" aria-current="page">다운로드</a>
+    <a href="index.html">홈</a><a href="about.html">게임 소개</a><a href="magic.html">5원소 스킬</a>
+    <a href="adventure.html">모험 안내</a><a href="equipment.html">장비·성장</a>
+    <a href="news.html">공지사항</a><a href="download.html" aria-current="page">다운로드</a>
     <a href="guide.html">패치노트</a>
   </nav>
 </header>
-
 <main>
-
   <section class="page-head wrap">
     <div class="eyebrow">DOWNLOAD</div>
     <h1>다섯 원소의 모험, 지금 시작하세요!</h1>
     <p>꼬마법사 : 5원소의 길</p>
   </section>
-
   <section class="wrap page-body">
     <div class="gallery-wide">
-
-      <div>
-        <img
-          class="actual-image"
-          src="assets/icon.png"
-          alt="꼬마법사 게임 아이콘"
-          loading="lazy"
-        >
-      </div>
-
+      <div><img class="actual-image" src="assets/icon.png" alt="꼬마법사 게임 아이콘" loading="lazy"></div>
       <div class="download-content">
-
         <h2>게임 다운로드</h2>
-
-        <p class="notice">
-          <strong>꼬마법사 : 5원소의 길 v1.20</strong><br>
-          불·물·얼음·전기·대지!<br>
-          다섯 원소의 마법으로 펼치는 성장 모험.<br><br>
-          Windows PC용
+        <p class="notice"><strong>꼬마법사 : 5원소의 길 v1.23</strong><br>
+          불·물·얼음·전기·대지!<br>다섯 원소의 마법으로 펼치는 성장 모험.<br><br>Windows PC용
         </p>
-
         <h3>처음 게임을 설치하시나요?</h3>
-
-        <p>
-          게임을 처음 시작한다면 아래 전체 게임 파일을
-          다운로드하세요.
-        </p>
-
+        <p>게임 v1.23과 자동 업데이트 런처 v2.1을 각각 다운로드해 같은 게임 폴더에 설치하세요.</p>
         <div class="download-actions">
-          <a
-            class="game-download-button"
-            href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_v1.20_Windows.zip"
-          >
-            ⬇ 게임 전체 다운로드
-            <small>Windows PC · v1.20 · 약 564MB</small>
+          <a class="game-download-button" href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.23/Mage_Full_v1.23.zip">
+            ⬇ 게임 v1.23 다운로드
+            <small>Windows PC · 최신 게임 EXE/PCK · 런처 별도</small>
           </a>
         </div>
-
-        <div class="download-guide">
-          <strong>처음 설치 방법</strong>
-
-          <p>① 전체 게임 ZIP을 다운로드합니다.</p>
-          <p>② 원하는 폴더에 압축을 해제합니다.</p>
-          <p>③ <code>꼬마법사.exe</code>를 실행합니다.</p>
-          <p>
-            ④ 자동 업데이트 런처가 구버전이라면
-            아래 설치기를 한 번 더 적용합니다.
-          </p>
-        </div>
-
-        <h3>자동 업데이트 런처</h3>
-
-        <p>
-          이미 게임을 설치했다면 새 런처를 적용해 주세요.
-          이후 지원되는 게임 버전 간에는 변경된 데이터만
-          다운로드해 업데이트할 수 있습니다.
-        </p>
-
+        <h3>자동 업데이트 런처 v2.1 다운로드</h3>
+        <p>신규 사용자와 기존 사용자 모두 동일한 런처 설치기를 사용합니다. 기존 런처가 있다면 재설치하여 업데이트 엔진을 갱신할 수 있습니다.</p>
         <div class="download-actions">
-          <a
-            class="game-download-button launcher-button"
-            href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.20/PCYStudio_LittleMage_Launcher_Installer_v1_3_0.zip"
-          >
+          <a class="game-download-button updater-button" href="https://github.com/cy3956-glitch/little-mage/releases/download/v1.23/PCYStudio_LittleMage_Launcher_v2_1_Installer.zip">
             ↻ 자동 업데이트 런처 다운로드
-            <small>v1.3.0 · 기존 사용자 · 최초 1회 설치</small>
+            <small>런처 v1.3.0 디자인 · 업데이트 엔진 v2.1 · 게임 파일 별도</small>
           </a>
         </div>
-
         <div class="download-guide">
-          <strong>런처 설치 방법</strong>
-
-          <p>① 런처 설치기 ZIP을 다운로드합니다.</p>
-          <p>② 압축을 해제합니다.</p>
-          <p>
-            ③ <code>INSTALL_LAUNCHER.bat</code>를 실행합니다.
-          </p>
-          <p>
-            ④ 기존 게임이 설치된 폴더를 선택합니다.
-          </p>
-          <p>
-            ⑤ 설치가 끝나면
-            <code>꼬마법사.exe</code>를 실행합니다.
-            기존캐릭터 저장위치 %APPDATA%\Godot\app_userdata
-          </p>
+          <strong>신규 사용자 설치 순서</strong>
+          <p>① 위의 <code>Mage_Full_v1.23.zip</code> 압축을 풉니다.</p>
+          <p>② 압축을 푼 폴더 안에 <code>Game/MageGame.exe</code>와 <code>Game/MageGame.pck</code>가 있는지 확인합니다.</p>
+          <p>③ 런처 ZIP을 따로 풀고 <code>INSTALL_LAUNCHER.bat</code>를 실행합니다.</p>
+          <p>④ <code>Game</code> 폴더가 들어 있는 상위 폴더를 선택합니다.</p>
+          <p>⑤ 설치 후 그 폴더에서 <code>꼬마법사.exe</code>를 실행합니다.</p>
         </div>
-
+        <div class="download-guide">
+          <strong>기존 사용자 업데이트</strong>
+          <p>게임을 삭제하지 말고 런처 ZIP만 다운로드해 <code>INSTALL_LAUNCHER.bat</code>를 실행합니다.</p>
+          <p>기존 <code>꼬마법사.exe</code>가 있는 게임 설치 폴더를 선택하면 런처와 업데이트 엔진을 갱신합니다.</p>
+          <p>이후 런처에서 게임 업데이트를 확인하세요.</p>
+        </div>
         <div class="download-guide">
           <strong>자동 업데이트 안내</strong>
-
-          <p>
-            런처는 GitHub에서 최신 버전을 확인하고
-            지원되는 차등 패치를 다운로드합니다.
-          </p>
-
-          <p>
-            업데이트 중에는 게임을 종료해 주세요.
-            업데이트 파일 검증에 실패하면 기존 게임을
-            보존하도록 설계되어 있습니다.
-          </p>
-
-          <p>
-            현재 차등 업데이트는 지원되는 버전 간
-            게임 데이터(PCK) 업데이트를 기준으로 합니다.
-          </p>
+          <p>런처는 GitHub에서 최신 게임 버전을 확인합니다. 지원되는 업데이트 엔진에서는 새 버전으로 업데이트할 수 있습니다.</p>
+          <p>전체 파일 업데이트는 게임 용량만큼 다운로드할 수 있으며, 모든 버전에서 차등 다운로드가 제공되는 것은 아닙니다.</p>
+          <p>업데이트 중에는 게임을 종료해 주세요. 실패 시에는 기존 게임 파일을 보존하도록 설계되어 있습니다.</p>
         </div>
-
       </div>
     </div>
   </section>
-
 </main>
-
-<p
-  id="status-note"
-  class="status-note"
-  role="status"
-></p>
-
+<p id="status-note" class="status-note" role="status"></p>
 <footer class="wrap">
-  <a
-    class="studio-link"
-    href="#"
-    aria-disabled="true"
-    title="스튜디오 홈페이지 주소 연결 예정"
-  >
-    <img src="assets/studio.png" alt="PCYStudio 로고">
-    <span class="footer-brand">PCYStudio</span>
+  <a class="studio-link" href="#" aria-disabled="true" title="스튜디오 홈페이지 주소 연결 예정">
+    <img src="assets/studio.png" alt="PCYStudio 로고"><span class="footer-brand">PCYStudio</span>
   </a>
-
-  <span>꼬마법사 : 5원소의 길</span>
-  <small>© 2026 PCYStudio</small>
+  <span>꼬마법사 : 5원소의 길</span><small>© 2026 PCYStudio</small>
 </footer>
-
 </body>
 </html>
