@@ -24,6 +24,55 @@
 })();
 </script>
 <!-- PCY_V5_DIRECT_ENTRY_END -->
+<!-- PCY_V6_PREMIUM_START -->
+<style id="pcy-v6-premium">
+/* PCYStudio Little Mage V6: premium download page skin.
+   Scoped to download.html; respects V5 SPA iframe and original links. */
+:root {
+  --ink:#203830; --muted:#68766e; --gold:#a57a3a;
+  --bg:#f8f7f1; --panel:#fffef9; --line:#e4e5d9; --green:#365e4d;
+}
+html { background:var(--bg); }
+body {
+  background:var(--bg)!important; color:var(--ink)!important;
+  font-family:'Pretendard Variable','Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif!important;
+  font-size:15px; letter-spacing:-.025em; line-height:1.8;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+main { max-width:1110px!important; padding:56px 28px 90px!important; }
+.eyebrow {font-size:12px!important; color:#638574!important; letter-spacing:.18em!important; font-weight:800!important;}
+.heading {max-width:950px;font-size:clamp(34px,4.3vw,53px)!important;letter-spacing:-.065em!important;line-height:1.27!important;font-weight:900!important;margin:15px 0 14px!important;color:#263d34!important;}
+.subtitle {font-size:16px!important;color:#75857b!important;line-height:1.85!important;}
+.hero {grid-template-columns:minmax(265px,.91fr) minmax(0,1.55fr)!important;gap:26px!important;margin-top:36px!important;align-items:stretch!important;}
+.art {min-height:380px!important;border-radius:23px!important;background:linear-gradient(155deg,#e9eee5 5%,#e0e7dc 100%)!important;box-shadow:inset 0 0 0 1px rgba(62,84,66,.045);}
+.art img {width:81%!important;max-height:290px!important;filter:drop-shadow(0 16px 22px rgba(33,43,33,.1));}
+.info {padding:36px 35px 32px!important;border-radius:23px!important;border-color:#e6e9e1!important;background:var(--panel)!important;box-shadow:0 16px 44px rgba(40,55,40,.055)!important;display:flex;flex-direction:column;justify-content:center;}
+.pills {gap:9px!important;margin-bottom:16px!important;}
+.pill {font-size:12px!important;font-weight:750!important;letter-spacing:0!important;padding:6px 12px!important;background:#e9f0e8!important;color:#40634d!important;}
+.pill.gold {background:#f6ebd9!important;color:#926b2d!important;}
+.info h2 {font-size:clamp(23px,2.8vw,31px)!important;line-height:1.35!important;letter-spacing:-.055em!important;font-weight:850!important;margin:0 0 12px!important;color:#263d34!important;}
+.info p {font-size:14px!important;line-height:1.85!important;color:#718077!important;}
+.download {background:linear-gradient(115deg,#416b56,#254e3e)!important;color:white!important;border:1px solid #244936!important;border-radius:13px!important;box-shadow:0 5px 0 #203e31,0 13px 20px rgba(35,70,48,.11)!important;font-size:19px!important;letter-spacing:-.03em!important;font-weight:800!important;padding:17px 15px!important;min-height:66px!important;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease!important;}
+.download:hover {transform:translateY(-2px)!important;box-shadow:0 7px 0 #203e31,0 17px 24px rgba(35,70,48,.14)!important;filter:brightness(1.055)!important;}
+.download:active {transform:translateY(2px)!important;box-shadow:0 2px 0 #203e31!important;}
+.download:focus-visible {outline:3px solid #a48346!important;outline-offset:4px!important;}
+.meta {font-size:12px!important;line-height:1.6!important;color:#7e887f!important;}
+.note {font-size:12px!important;line-height:1.75!important;color:#8b9089!important;margin-top:19px!important;}
+.section-title {font-size:26px!important;letter-spacing:-.055em!important;color:#263d34!important;font-weight:850!important;margin:53px 0 20px!important;}
+.steps {gap:16px!important;}
+.step {border-color:#e5e8df!important;background:#fffefb!important;border-radius:16px!important;padding:25px 23px!important;box-shadow:0 6px 20px rgba(41,59,46,.025)!important;min-height:162px;}
+.num {background:#e9f0e7!important;color:#406a51!important;font-size:14px!important;width:34px!important;height:34px!important;}
+.step strong {font-size:17px!important;letter-spacing:-.045em!important;color:#284238!important;margin:10px 0 5px!important;}
+.step p {font-size:13px!important;color:#77857a!important;line-height:1.75!important;}
+.footnote {background:#edf1e9!important;color:#5c7164!important;border:1px solid #e0e8dc!important;border-radius:15px!important;padding:23px 26px!important;margin-top:27px!important;}
+.footnote b {font-size:15px!important;color:#325843!important;}
+.footnote p {font-size:13px!important;line-height:1.75!important;}
+footer {border-top:1px solid #e4e8df!important;color:#8a9388!important;}
+@media(max-width:780px){main{padding:35px 18px 64px!important}.hero{grid-template-columns:1fr!important;gap:17px!important}.art{min-height:240px!important}.art img{max-height:188px!important;width:auto!important}.info{padding:26px 21px 29px!important}.steps{grid-template-columns:1fr!important}.step{min-height:0}.heading{font-size:clamp(30px,7vw,42px)!important}.subtitle{font-size:14px!important}}
+@media(prefers-reduced-motion:reduce){.download{transition:none!important}.download:hover{transform:none!important}}
+
+</style>
+<!-- PCY_V6_PREMIUM_END -->
 </head>
 <body>
   <header class="site-header"><div class="topbar"><a class="brand" href="./index.html">🪄 꼬마법사 키우기 : 5원소의 길</a><nav class="nav" aria-label="홈페이지 메뉴"><a href="index.html">홈</a><a href="about.html">게임 소개</a><a href="magic.html">5원소 마법</a><a href="adventure.html">모험 안내</a><a href="equipment.html">장비&#183;성장</a><a href="news.html">공지사항</a><a href="download.html" aria-current="page">다운로드</a><a href="guide.html">가이드북</a></nav></div></header>
