@@ -8,7 +8,7 @@
   <style>
     :root{color-scheme:light;--ink:#173341;--muted:#63717a;--gold:#a16b1e;--bg:#faf8f2;--panel:#fff;--line:#e8e2d7;--green:#337661}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;line-height:1.65}
-    a{color:inherit}.site-header{border-bottom:1px solid var(--line);background:#ffffffd9}.topbar{max-width:1050px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{text-decoration:none;font-weight:900;font-size:17px}.nav{display:flex;gap:18px;font-size:13px;color:#52636b}.nav a{text-decoration:none}.nav a:hover{text-decoration:underline}
+    a{color:inherit}.site-header{border-bottom:1px solid var(--line);background:#ffffffd9}.topbar{max-width:1050px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{text-decoration:none;font-weight:900;font-size:17px}.nav{display:flex;gap:12px 18px;flex-wrap:wrap;font-size:13px;color:#52636b}.nav a{text-decoration:none}.nav a:hover{text-decoration:underline}.nav a[aria-current="page"]{color:var(--gold);font-weight:800}
     main{max-width:1050px;margin:0 auto;padding:46px 24px 80px}.eyebrow{color:var(--gold);font-size:13px;font-weight:800;letter-spacing:.05em}.heading{font-weight:900;font-size:clamp(27px,4vw,38px);line-height:1.3;letter-spacing:-.05em;margin:8px 0 8px}.subtitle{margin:0;color:var(--muted);font-size:15px}
     .hero{display:grid;grid-template-columns:minmax(210px,320px) 1fr;gap:32px;margin-top:28px;align-items:stretch}.art{background:#e9eee3;border-radius:18px;min-height:330px;display:flex;align-items:center;justify-content:center;overflow:hidden}.art img{display:block;width:76%;max-height:260px;object-fit:contain;border-radius:24px}.art .fallback{font-size:72px}.info{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 10px 30px #2c36310a}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.pill{font-size:12px;font-weight:800;background:#edf5ee;color:#2c6852;border-radius:999px;padding:4px 10px}.pill.gold{background:#fff1d7;color:#92611b}.info h2{font-size:22px;margin:0 0 6px;letter-spacing:-.03em}.info p{color:var(--muted);font-size:14px;margin:0 0 20px}.download{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;background:linear-gradient(125deg,#bc822d,#754711);border-radius:13px;color:#fff;padding:16px 18px;box-shadow:0 5px 0 #59380d;font-weight:900;font-size:18px;min-height:62px;transition:filter .15s}.download:hover{filter:brightness(1.08)}.download:focus-visible{outline:3px solid #277da5;outline-offset:4px}.meta{text-align:center;font-size:12px!important;margin:13px 0 0!important}.note{font-size:13px!important;margin-top:18px!important}
     .section-title{font-size:21px;margin:40px 0 16px;letter-spacing:-.035em}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px}.step strong{display:block;margin:6px 0;font-size:15px}.step p{margin:0;color:var(--muted);font-size:13px}.num{display:grid;place-items:center;background:#f8edda;color:var(--gold);border-radius:50%;width:32px;height:32px;font-weight:900}
@@ -17,13 +17,13 @@
   </style>
 </head>
 <body>
-  <header class="site-header"><div class="topbar"><a class="brand" href="./index.html">🪄 꼬마법사 키우기 : 5원소의 길</a><nav class="nav" aria-label="홈페이지 메뉴"><a href="./index.html">홈</a><a href="./download.html" aria-current="page">다운로드</a><a href="https://github.com/cy3956-glitch/little-mage/releases">업데이트 내역</a></nav></div></header>
+  <header class="site-header"><div class="topbar"><a class="brand" href="./index.html">🪄 꼬마법사 키우기 : 5원소의 길</a><nav class="nav" aria-label="홈페이지 메뉴"><a href="index.html">홈</a><a href="about.html">게임 소개</a><a href="magic.html">5원소 마법</a><a href="adventure.html">모험 안내</a><a href="equipment.html">장비&#183;성장</a><a href="news.html">공지사항</a><a href="download.html" aria-current="page">다운로드</a><a href="guide.html">가이드북</a></nav></div></header>
   <main>
     <div class="eyebrow">PCYSTUDIO · WINDOWS PC</div>
     <h1 class="heading">다섯 원소의 모험, 지금 시작하세요!</h1>
     <p class="subtitle">처음 설치도, 다음 업데이트도. 이제 하나의 런처로 간편하게 즐기세요.</p>
     <section class="hero" aria-label="꼬마법사 다운로드">
-      <div class="art" id="game-art"><img src="assets/title.png" alt="꼬마법사 키우기 게임 이미지" loading="eager"></div>
+      <div class="art" id="game-art"><img src="assets/title.png" alt="꼬마법사 키우기" loading="eager"></div>
       <div class="info">
         <div class="pills"><span class="pill gold">통합 런처</span><span class="pill">최신 게임 v1.27</span></div>
         <h2>꼬마법사 키우기 다운로드</h2>
