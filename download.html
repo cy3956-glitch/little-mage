@@ -97,5 +97,17 @@ footer {border-top:1px solid #e5e2d9!important;color:#89928b!important;font-size
     <div class="footnote"><b>기존 사용자 안내</b><p>이미 설치한 게임은 기존 런처를 통해 v1.27 자동 업데이트를 계속 사용할 수 있습니다. 새 설치 파일 사용 전에 기존 캐릭터 데이터와 설치 폴더를 삭제하지 마세요.</p></div>
   </main>
   <footer>© PCYStudio · 꼬마법사 키우기 : 5원소의 길</footer>
+<script id="pcy-live-version">
+fetch('updates/universal_latest.json?t='+Date.now(),{cache:'no-store'})
+.then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+.then(m=>{
+  if(!/^\d+\.\d+(?:\.\d+)?$/.test(m.version))return;
+  document.querySelectorAll('.pill').forEach(el=>{
+    if(el.textContent.includes('최신 게임')){
+      el.textContent='최신 게임 v'+m.version;
+    }
+  });
+}).catch(console.warn);
+</script>
 </body>
 </html>

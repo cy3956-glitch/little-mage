@@ -90,6 +90,7 @@
     setActive(u);
     const embedded=new URL(u.href);
     embedded.searchParams.set('pcy_embed','1');
+    embedded.searchParams.set('_t',Date.now().toString());
     if (frame.src !== embedded.href) frame.src=embedded.href;
     if(push) history.pushState({pcyV5:true},'',clean.pathname+'?view='+encodeURIComponent(u.pathname.substring(root.pathname.length))+u.hash);
   }
