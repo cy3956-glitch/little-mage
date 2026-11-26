@@ -1,11 +1,11 @@
 {
     "format":  "PCYFULL2",
-    "version":  "1.27",
+    "version":  "1.28",
     "full":  {
-                 "url":  "https://github.com/cy3956-glitch/little-mage/releases/download/v1.27/PCYStudio_LittleMage_v1.27_PCYFULL2.zip",
-                 "sha256":  "e30137af512c3e6eddf3ecc81e6d8ad75f22ff7ff516b760f2716525b96f8c1f",
-                 "pck_sha256":  "db364c386d564ac55e9707c5d54ccfb95a2242eba1521110ec47c3e8b3427ef3",
-                 "exe_sha256":  "4af66ea75deb34bffa7d9b3c2b8bd02538cf757c830bc125fb6de0890ea3faa7"
+                 "url":  "https://github.com/cy3956-glitch/little-mage/releases/download/v1.28/Mage_Full_v1.28.zip",
+                 "sha256":  "b826c3dc3964faac6e14febf712fefaf01f13ddda3ef6b269f508733f54cd1d4",
+                 "pck_sha256":  "53b0ac0664a8bf1848da0d7180ab32edccff0cb4cda27345f3f121b6007c55e9",
+                 "exe_sha256":  "2e54bb59e920ad464da2ee606d3c60c906626b93a576cdb8eea3d72cab3408d5"
              },
     "deltas":  [
 
